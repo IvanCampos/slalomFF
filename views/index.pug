@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  +nav
+
+  .container.head.section
+    h1 Slalom Fantasy Football
+    br
+    if null == user
+      h5(style=" color: red") Login with Y! is required for access
+      a.btn.login-btn(href="/auth/yahoo", title="Login with Yahoo") Login with Y!
+      br
+    else if null != user  
+      h4 Standings
+      #standings
+      br
+      //- h4 Teams
+      //-#teams
+      //-br 
+      //
+      h4 Scoreboard
+      #scoreboard
+      br
